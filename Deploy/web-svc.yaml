@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: rpsls-web
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2020-06-20T06:27:40Z"
+  labels:
+    app: web
+    app.kubernetes.io/managed-by: Helm
+    chart: web-1.0.0
+    heritage: Helm
+    release: rpsls-web
+  name: web
+  namespace: default
+  resourceVersion: "13059731"
+  selfLink: /api/v1/namespaces/default/services/web
+  uid: fc0e14c6-ce4a-4c09-a2ac-c4d6c65ec364
+spec:
+  clusterIP: 10.0.199.94
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+  - name: uploader
+    port: 8080
+    protocol: TCP
+    targetPort: uploader
+  selector:
+    app: web
+    release: rpsls-web
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
