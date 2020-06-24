@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       working-directory: Source/Services/RPSLS.DotNetPlayer.Api
-      run: ls -al # docker build . # --file Dockerfile --tag ${{ secrets.ACR_NAME }}.azurecr.io/dotnet.player:gh-${{ github.sha }}
+      run: docker version # docker build . # --file Dockerfile --tag ${{ secrets.ACR_NAME }}.azurecr.io/dotnet.player:gh-${{ github.sha }}
     - name: Login to Azure
       uses: azure/login@v1
       with:
